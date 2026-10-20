@@ -1,12 +1,27 @@
 {
-  "framework": null,
-  "installCommand": "npm install && npm install --prefix frontend",
-  "buildCommand": "npm run build --prefix frontend",
-  "outputDirectory": "frontend/build",
-  "functions": {
-    "api/scrape.js": {
-      "maxDuration": 300,
-      "includeFiles": "node_modules/@sparticuz/chromium/bin/**"
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "services": {
+    "backend": {
+      "root": "backend",
+      "framework": "express"
+    },
+    "frontend": {
+      "root": "frontend",
+      "framework": "create-react-app"
     }
-  }
+  },
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": {
+        "service": "backend"
+      }
+    },
+    {
+      "source": "/(.*)",
+      "destination": {
+        "service": "frontend"
+      }
+    }
+  ]
 }
