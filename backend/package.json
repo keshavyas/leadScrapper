@@ -3,11 +3,16 @@
   "version": "1.0.0",
   "description": "Local Google Maps B2B lead scraper (Express + Playwright)",
   "main": "server.js",
-  "scripts": { "start": "node server.js", "dev": "node --watch server.js" },
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
   "dependencies": {
+    "@sparticuz/chromium": "^147.0.0",
     "cors": "^2.8.5",
     "express": "^4.19.2",
     "json2csv": "^6.0.0-alpha.2",
-    "playwright-chromium": "^1.47.0"
+    "playwright-chromium": "^1.47.0",
+    "playwright-core": "^1.64.1"
   }
 }
